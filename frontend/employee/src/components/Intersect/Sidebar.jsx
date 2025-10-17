@@ -3,15 +3,7 @@ import React, { useState } from 'react';
 import { FaFolder, FaChevronDown, FaChevronUp, FaFileAlt, FaHome, FaUser, FaUpload } from 'react-icons/fa';
 
 const sidebarData = [
-  {
-    name: 'Intersect',
-    icon: <FaFolder />,
-    children: [
-      { name: 'Navbar.jsx', icon: <FaFileAlt />, link: '/navbar' },
-      { name: 'Sidebar.jsx', icon: <FaFileAlt />, link: '/sidebar' },
-      { name: 'Footer.jsx', icon: <FaFileAlt />, link: '/footer' },
-    ],
-  },
+  { name: 'Dashboard', icon: <FaHome />, link: '/dashboard' },
   {
     name: 'list',
     icon: <FaFolder />,
@@ -24,7 +16,6 @@ const sidebarData = [
     name: 'mainmenu',
     icon: <FaFolder />,
     children: [
-      { name: 'Dashboard.jsx', icon: <FaFileAlt />, link: '/dashboard' },
       { name: 'HelpCenter.jsx', icon: <FaFileAlt />, link: '/helpcenter' },
       { name: 'Setting.jsx', icon: <FaFileAlt />, link: '/setting' },
       { name: 'Task.jsx', icon: <FaFileAlt />, link: '/task' },

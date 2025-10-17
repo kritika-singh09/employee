@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Navbar from './components/Intersect/Navbar';
 import Sidebar from './components/Intersect/Sidebar';
-import Dashboard from './components/mainmenu/Dashboard.jsx';
+import Dashboard from './components/Dashboard.jsx';
 import Footer from './components/Intersect/Footer.jsx';
 import Project from './components/list/Project.jsx';
 import SalaryInformation from './components/list/SalaryInformation';
