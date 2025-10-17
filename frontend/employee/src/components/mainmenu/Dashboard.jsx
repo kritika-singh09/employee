@@ -83,7 +83,7 @@ function Dashboard() {
   // Fetch employees from API
   const fetchEmployees = () => {
     setLoading(true);
-    fetch('https://employeemanagement-j1lc.vercel.app/api/employees/')
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/employees/`)
       .then(res => res.json())
       .then(data => {
         setEmployees(data);
@@ -109,7 +109,7 @@ function Dashboard() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('https://employeemanagement-plum.vercel.app/api/employees/', {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/employees/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -150,7 +150,7 @@ function Dashboard() {
     const emp = employees.find(e => e.employeeId === employeeIdOrId || e.id === employeeIdOrId);
     const idToDelete = emp?._id || employeeIdOrId;
     try {
-      const response = await fetch(`https://employeemanagement-j1lc.vercel.app/api/employees/${idToDelete}`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/employees/${idToDelete}`, {
         method: 'DELETE',
       });
       if (!response.ok) throw new Error('Failed to delete employee');
@@ -174,7 +174,7 @@ function Dashboard() {
     setError(null);
     try {
       const { _id, name, position, department, status } = editModal.employee;
-      const response = await fetch(`https://employeemanagement-j1lc.vercel.app/api/employees/${_id}`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/employees/${_id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, position, department, status })
